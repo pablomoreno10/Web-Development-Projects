@@ -5,15 +5,17 @@
     Change the h1 to show the adjective and noun.
     But when the user first goes on the website and there is no adjective and noun, 
     Show the default h1 below -->
-  <% if (locals.random_name) { %>
-  <h1><%= random_name %></h1>
-  <% } else { %>
-  <h1>Press the button to get a random name!</h1>
-  <% } %>
-
-  <form action="/submit" method="POST">
-    <input type="submit" value="Generate Name">
-  </form>
-
+<body>
+  <% if (locals.adj && locals.noun) { %>
+    <h1><%= adj + " " +  noun%> </h1>
+    <% } else { %>
+    <h1>Press the button to get a random name!</h1>
+    <% } %>
+  
+    <form action="/submit" method="POST">
+      <input type="submit" value="Generate Name">
+    </form>  
+</body>
+  
 <!-- Step 3 Add Footer -->
 <%- include("partials/footer.ejs") %>
