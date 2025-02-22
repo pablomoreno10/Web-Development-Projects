@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import { name } from "ejs";
 
 const app = express();
 const port = 3000;
@@ -15,11 +16,14 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  //Step 1 - Make the get route work and render the index.ejs file.
+  app.use(express.static("public"));
+  res.render("index.ejs");
 });
 
 app.post("/submit", (req, res) => {
   //Step 2 - Make the generate name functionality work
+  random_name = adj[Math.floor(Math.random() * adj.length)] + " " + noun[Math.floor(Math.random() * noun.length)];
+  res.render("index.ejs", {name: random_name});
   //Hint: When the "Generate Name" button in index.ejs is clicked, it should hit up this route.
   //Then:
   //1. You should randomly pick an adjective from the const "adj" and a noun from const "noun",
