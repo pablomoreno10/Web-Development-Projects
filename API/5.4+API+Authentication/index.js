@@ -9,7 +9,7 @@ const API_URL = "https://secrets-api.appbrewery.com/";
 const yourUsername = "pablo";
 const yourPassword = "hello";
 const yourAPIKey = "08635a46-ce88-431f-95b5-c621fb2fd639";
-const yourBearerToken = "4a0e9e98-ecbe-4110-ba1b-2c95329b779c";
+const yourBearerToken = "token";
 
 app.set("view engine", "ejs");
 
